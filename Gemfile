@@ -7,7 +7,7 @@ gem 'sinatra-base'
 gem 'sinatra-flash'
 gem 'tilt'
 gem 'data_mapper'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'dm-sqlite-adapter'
 
 group :production do
