@@ -13,7 +13,7 @@ class MyApp < Sinatra::Base
 
    	configure :production do
    		#DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-   		DataMapper.setup(:default, "sqlite3://#{Dir.pwd}/people.db" )
+   		DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_RED_URL'] || "sqlite3://#{Dir.pwd}/people.db" )
    	end
 
 	DataMapper::Logger.new($stdout, :debug)
