@@ -7,8 +7,11 @@ gem 'sinatra-base'
 gem 'sinatra-flash'
 gem 'tilt'
 gem 'data_mapper'
-#gem 'sqlite3'
-gem 'dm-sqlite-adapter'
+
+group :development do
+	gem 'sqlite3'
+	gem 'dm-sqlite-adapter'
+end
 
 group :production do
   gem "do_postgres"
