@@ -7,6 +7,7 @@ gem 'sinatra-base'
 gem 'sinatra-flash'
 gem 'tilt'
 gem 'data_mapper'
+gem 'thin'
 
 group :development do
 	gem 'sqlite3'
