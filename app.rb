@@ -14,7 +14,8 @@ class MyApp < Sinatra::Base
    	configure :production do
    		#DataMapper.setup(:default, ENV['DATABASE_URL'] || || 'postgres://#{Dir.pwd}/people.db')
    		#DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-   		DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_ONYX_URL'] || ENV['OPENSHIFT_POSTGRESQL_DB_HOST'])
+   		DataMapper.setup(:default, ENV['OPENSHIFT_POSTGRESQL_DB_HOST'])
+   		#ENV['HEROKU_POSTGRESQL_ONYX_URL'] 
 
 #   		Connection URL:
 #postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT
