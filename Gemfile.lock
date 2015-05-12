@@ -65,7 +65,7 @@ GEM
     json_pure (1.8.2)
     multi_json (1.11.0)
     pg (0.18.1)
-    rack (1.6.0)
+    rack (1.6.1)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.6)
