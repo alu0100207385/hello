@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'rubygems'
-require 'sinatra'
+#require 'sinatra'
 require 'sinatra/base'
 require 'data_mapper'
 require 'tilt/erb'
@@ -14,7 +14,11 @@ class MyApp < Sinatra::Base
    	configure :production do
    		#DataMapper.setup(:default, ENV['DATABASE_URL'] || || 'postgres://#{Dir.pwd}/people.db')
    		#DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-   		DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_ONYX_URL'])
+   		DataMapper.setup(:default, ENV['HEROKU_POSTGRESQL_ONYX_URL'] || ENV['OPENSHIFT_POSTGRESQL_DB_HOST'])
+
+#   		Connection URL:
+#postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_PORT
+
    	end
 
 	DataMapper::Logger.new($stdout, :debug)
@@ -43,3 +47,5 @@ class MyApp < Sinatra::Base
 	# start the server if ruby file executed directly
   	run! if app_file == $0
 end
+
+j = MyApp.new
