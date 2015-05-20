@@ -12,10 +12,9 @@ class MyApp < Sinatra::Base
    	end
 
    	configure :production do
-   		#DataMapper.setup(:default, ENV['DATABASE_URL'] || || 'postgres://#{Dir.pwd}/people.db')
    		#DataMapper.setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-   		#DataMapper.setup(:default, ENV['OPENSHIFT_POSTGRESQL_DB_URL'] || ENV['HEROKU_POSTGRESQL_ONYX_URL'])
-   		DataMapper.setup(:default, "postgres://adminmkzy2cb:4sRv3TSzZ4eE@127.6.239.2:5432")
+   		DataMapper.setup(:default, ENV['OPENSHIFT_POSTGRESQL_DB_URL2'] || ENV['HEROKU_POSTGRESQL_ONYX_URL'])
+   		#DataMapper.setup(:default, "postgres://adminmkzy2cb:4sRv3TSzZ4eE@127.6.239.2:5432")
    	end
 
 	DataMapper::Logger.new($stdout, :debug)
